@@ -1,0 +1,38 @@
+server:
+  port: 8081
+
+camunda:
+  bpm:
+    client:
+      base-url: http://localhost:8080/engine-rest
+      create_assess:
+        include-extension-properties: true
+
+logging:
+  level:
+    root: "info"
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:h2-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  api:
+    controller:
+      path-prefix: /api
+
+workflow:
+  definition:
+    process:
+      contract: "contract_flow"
+    task:
+      draft: "draft"
