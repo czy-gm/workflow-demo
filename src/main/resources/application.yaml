@@ -7,6 +7,8 @@ camunda:
       base-url: http://localhost:8080/engine-rest
       create_assess:
         include-extension-properties: true
+  autoDeploy:
+    bpmnResources: 'classpath*:**/*.bpmn'
 
 logging:
   level:

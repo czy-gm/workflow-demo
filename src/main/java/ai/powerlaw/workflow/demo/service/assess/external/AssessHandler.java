@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AssessHandler {
-    private static Logger logger = LoggerFactory.getLogger(AssessHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(AssessHandler.class);
 
     @Bean
     @ExternalTaskSubscription(value = "create_assess")

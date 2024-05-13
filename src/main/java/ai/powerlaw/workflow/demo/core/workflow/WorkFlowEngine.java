@@ -15,6 +15,4 @@ public interface WorkFlowEngine {
     Task getTaskByProcessIdAndKey(String processId, String taskDefinitionKey) throws ApiException;
 
     void completeTask(String taskId, TaskDTO taskDTO) throws ApiException;
-
-    void subscribeTask(String taskTopic);
 }

@@ -50,6 +50,13 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
 
     }
 
+    @ExceptionHandler(value = {BusinessException.class})
+    public ResponseData<String> handleException(BusinessException e) {
+        e.printStackTrace();
+        log.error("BusinessException: {}", e.getMessage());
+        return ResponseData.failure(e.getCode(), e.getMessage());
+    }
+
     @ExceptionHandler(AsyncRequestTimeoutException.class)
     public ResponseData<String> handleException(AsyncRequestTimeoutException e) {
         e.printStackTrace();

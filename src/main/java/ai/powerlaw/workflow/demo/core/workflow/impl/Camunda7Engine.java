@@ -103,9 +103,4 @@ public class Camunda7Engine implements WorkFlowEngine {
         completeTaskDto.setVariables(variableValueDtoMap);
         taskApi.complete(taskId, completeTaskDto);
     }
-
-    @Override
-    public void subscribeTask(String taskTopic) {
-
-    }
 }
